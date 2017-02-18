@@ -8,7 +8,7 @@ The Tao of tmux
     :scale: 60%
     :align: center
 
-    BSD-licensed terminal multiplexer.
+    ISC-licensed terminal multiplexer.
 
 tmux is geared for developers and admins who interact regularly with
 CLI (text-only interfaces)
@@ -666,10 +666,7 @@ The Book
 
    .. container:: rightside-book
 
-      **Pre-order the book!**
-
-      Get your copy of the  *The Tao of tmux* on `Leanpub`_ and `Kindle`_
-      (Amazon). The final version will be delivered to you by January 2017.
+      *The Tao of tmux* is available on `Leanpub`_ and `Kindle`_ (Amazon).
 
       .. figure:: _static/img/books/amazon-logo.png
         :scale: 19%

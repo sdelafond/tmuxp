@@ -1,3 +1,14 @@
+tmuxp (1.2.5-1) experimental; urgency=medium
+
+  * NEW package (Closes: #774055)
+  * Imported Upstream version 1.2.5
+  * Take maintainership
+  * Fix descriptions
+  * Bump-up Standards-Version
+  * Add copyright file
+
+ -- Sebastien Delafond <seb@debian.org>  Sat, 18 Feb 2017 12:35:41 +0100
+
 tmuxp (1.2.4-0ubuntu1~ubuntu17.04.1~ppa1) zesty; urgency=medium
 
   * bump version

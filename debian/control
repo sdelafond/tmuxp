@@ -11,7 +11,7 @@ Homepage: http://github.com/tony/tmuxp/
 
 Package: tmuxp
 Architecture: all
-Depends: python3-tmuxp
+Depends: ${misc:Depends}, ${python3:Depends}, python3-tmuxp
 Description: tmux session manager
  tmux session manager allowing both JSON and YAML configuration
  formats. Available features:

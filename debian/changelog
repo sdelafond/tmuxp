@@ -1,3 +1,9 @@
+tmuxp (1.2.6-2) unstable; urgency=medium
+
+  * Target usntable
+
+ -- Sebastien Delafond <seb@debian.org>  Wed, 21 Jun 2017 17:48:37 +0200
+
 tmuxp (1.2.6-1) experimental; urgency=medium
 
   * Imported Upstream version 1.2.6

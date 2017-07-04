@@ -1,8 +1,8 @@
 .. _examples:
 
-========
-Examples
-========
+======================
+Example Configurations
+======================
 
 Short hand / inline
 -------------------
@@ -301,6 +301,25 @@ JSON
 .. literalinclude:: ../examples/options.json
     :language: json
 
+Set window options after pane creation
+--------------------------------------
+
+Apply window options after panes have been created. Useful for
+``synchronize-panes`` option after executing individual commands in each
+pane during creation.
+
+YAML
+~~~~
+
+.. literalinclude:: ../examples/2-pane-synchronized.yaml
+    :language: yaml
+
+JSON
+~~~~
+
+.. literalinclude:: ../examples/2-pane-synchronized.json
+    :language: json
+
 Main pane height
 ----------------
 
@@ -401,7 +420,7 @@ See examples of ``tmuxp`` in the wild. Have a project config to show off?
 Edit this page.
 
 * https://github.com/tony/dockerfiles/blob/master/.tmuxp.yaml
-* https://github.com/tony/pullv/blob/master/.tmuxp.yaml
+* https://github.com/tony/vcspull/blob/master/.tmuxp.yaml
 * https://github.com/tony/sphinxcontrib-github/blob/master/.tmuxp.yaml
 
 You can use ``start_directory: ./`` to make the directories relative to

@@ -1,6 +1,6 @@
 Metadata-Version: 1.1
 Name: tmuxp
-Version: 1.2.6
+Version: 1.3.1
 Summary: tmux session manager
 Home-page: http://github.com/tony/tmuxp/
 Author: Tony Narlock
@@ -14,6 +14,13 @@ Description: tmuxp, tmux session manager. built on `libtmux`_.
         **New to tmux?** `The Tao of tmux <https://leanpub.com/the-tao-of-tmux>`_ is
         available on Leanpub and `Amazon Kindle`_. Read and browse the book for free
         `on the web`_.
+        
+        Installation
+        ------------
+        
+        .. code-block:: shell
+        
+           $ pip install --user tmuxp
         
         Load a tmux session
         -------------------
@@ -37,19 +44,19 @@ Description: tmuxp, tmux session manager. built on `libtmux`_.
                - echo third pane          # pane no. 3
                - echo forth pane          # pane no. 4
         
-        Save as ``mysession.yaml``. And load:
+        Save as *mysession.yaml*, and load:
         
         .. code-block:: sh
         
            $ tmuxp load ./mysession.yaml
         
-        Sessions in ``~/.tmuxp/`` can use names:
+        Sessions in *~/.tmuxp/* can use names:
         
         .. code-block:: sh
         
             $ tmuxp load mysession
         
-        Projects with ``.tmuxp.yaml`` or ``.tmuxp.json`` load via directory:
+        Projects with *.tmuxp.yaml* or *.tmuxp.json* load via directory:
         
         .. code-block:: sh
         
@@ -63,8 +70,8 @@ Description: tmuxp, tmux session manager. built on `libtmux`_.
         
         `simple`_, `very elaborate`_ config examples
         
-        Store configs in (``~/.tmuxp``) or include in your project as
-        ``~/.tmuxp.{yaml,json}``. See `author's tmuxp configs`_ and the
+        Store configs in (*~/.tmuxp*) or include in your project as
+        *~/.tmuxp.{yaml,json}*. See `author's tmuxp configs`_ and the
         the projects' `tmuxp.yaml`_.
         
         Run custom startup scripts (such as installing project dependencies before
@@ -81,11 +88,11 @@ Description: tmuxp, tmux session manager. built on `libtmux`_.
         Freeze a tmux session
         ---------------------
         
-        snapshot your tmux layout, pane paths, and window/session names. 
+        Snapshot your tmux layout, pane paths, and window/session names. 
         
         .. code-block:: sh
         
-           $ tmuxp freeze SESSION_NAME
+           $ tmuxp freeze session-name
         
         See more about `freezing tmux`_ sessions.
         
@@ -139,8 +146,8 @@ Description: tmuxp, tmux session manager. built on `libtmux`_.
         ---------------
         
         ==============  ==========================================================
-        tmux support    1.8, 1.9a, 2.0, 2.1, 2.2, 2.3
-        python support  2.6, 2.7, >= 3.3
+        tmux support    1.8, 1.9a, 2.0, 2.1, 2.2, 2.3, 2.4
+        python support  2.7, >= 3.3, pypy, pypy3
         config support  yaml, json, python dict
         Source          https://github.com/tony/tmuxp
         Docs            http://tmuxp.git-pull.com
@@ -148,7 +155,7 @@ Description: tmuxp, tmux session manager. built on `libtmux`_.
         Changelog       http://tmuxp.git-pull.com/en/latest/history.html
         Issues          https://github.com/tony/tmuxp/issues
         Travis          http://travis-ci.org/tony/tmuxp
-        Test Coverage   https://coveralls.io/r/tony/tmuxp
+        Test Coverage   https://codecov.io/gh/tony/tmuxp
         pypi            https://pypi.python.org/pypi/tmuxp
         Open Hub        https://www.openhub.net/p/tmuxp
         License         `BSD`_.
@@ -157,7 +164,7 @@ Description: tmuxp, tmux session manager. built on `libtmux`_.
                             $ git clone https://github.com/tony/tmuxp.git
         install stable  .. code-block:: bash
         
-                            $ sudo pip install tmuxp
+                            $ pip install --user tmuxp
         install dev     .. code-block:: bash
         
                             $ git clone https://github.com/tony/tmuxp.git tmuxp
@@ -206,10 +213,11 @@ Classifier: Operating System :: MacOS :: MacOS X
 Classifier: Environment :: Web Environment
 Classifier: Intended Audience :: Developers
 Classifier: Programming Language :: Python
-Classifier: Programming Language :: Python :: 2.6
 Classifier: Programming Language :: Python :: 2.7
 Classifier: Programming Language :: Python :: 3.3
 Classifier: Programming Language :: Python :: 3.4
 Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: Implementation :: PyPy
 Classifier: Topic :: Utilities
 Classifier: Topic :: System :: Shells

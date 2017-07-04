@@ -6,6 +6,13 @@ tmuxp, tmux session manager. built on `libtmux`_.
 available on Leanpub and `Amazon Kindle`_. Read and browse the book for free
 `on the web`_.
 
+Installation
+------------
+
+.. code-block:: shell
+
+   $ pip install --user tmuxp
+
 Load a tmux session
 -------------------
 
@@ -28,19 +35,19 @@ Load tmux sessions via json and YAML, `tmuxinator`_ and
        - echo third pane          # pane no. 3
        - echo forth pane          # pane no. 4
 
-Save as ``mysession.yaml``. And load:
+Save as *mysession.yaml*, and load:
 
 .. code-block:: sh
 
    $ tmuxp load ./mysession.yaml
 
-Sessions in ``~/.tmuxp/`` can use names:
+Sessions in *~/.tmuxp/* can use names:
 
 .. code-block:: sh
 
     $ tmuxp load mysession
 
-Projects with ``.tmuxp.yaml`` or ``.tmuxp.json`` load via directory:
+Projects with *.tmuxp.yaml* or *.tmuxp.json* load via directory:
 
 .. code-block:: sh
 
@@ -54,8 +61,8 @@ Load multiple at once (in bg, offer to attach last):
 
 `simple`_, `very elaborate`_ config examples
 
-Store configs in (``~/.tmuxp``) or include in your project as
-``~/.tmuxp.{yaml,json}``. See `author's tmuxp configs`_ and the
+Store configs in (*~/.tmuxp*) or include in your project as
+*~/.tmuxp.{yaml,json}*. See `author's tmuxp configs`_ and the
 the projects' `tmuxp.yaml`_.
 
 Run custom startup scripts (such as installing project dependencies before
@@ -72,11 +79,11 @@ You can also load sessions in the background by passing ``-d`` flag
 Freeze a tmux session
 ---------------------
 
-snapshot your tmux layout, pane paths, and window/session names. 
+Snapshot your tmux layout, pane paths, and window/session names. 
 
 .. code-block:: sh
 
-   $ tmuxp freeze SESSION_NAME
+   $ tmuxp freeze session-name
 
 See more about `freezing tmux`_ sessions.
 
@@ -130,8 +137,8 @@ Project details
 ---------------
 
 ==============  ==========================================================
-tmux support    1.8, 1.9a, 2.0, 2.1, 2.2, 2.3
-python support  2.6, 2.7, >= 3.3
+tmux support    1.8, 1.9a, 2.0, 2.1, 2.2, 2.3, 2.4
+python support  2.7, >= 3.3, pypy, pypy3
 config support  yaml, json, python dict
 Source          https://github.com/tony/tmuxp
 Docs            http://tmuxp.git-pull.com
@@ -139,7 +146,7 @@ API             http://tmuxp.git-pull.com/en/latest/api.html
 Changelog       http://tmuxp.git-pull.com/en/latest/history.html
 Issues          https://github.com/tony/tmuxp/issues
 Travis          http://travis-ci.org/tony/tmuxp
-Test Coverage   https://coveralls.io/r/tony/tmuxp
+Test Coverage   https://codecov.io/gh/tony/tmuxp
 pypi            https://pypi.python.org/pypi/tmuxp
 Open Hub        https://www.openhub.net/p/tmuxp
 License         `BSD`_.
@@ -148,7 +155,7 @@ git repo        .. code-block:: bash
                     $ git clone https://github.com/tony/tmuxp.git
 install stable  .. code-block:: bash
 
-                    $ sudo pip install tmuxp
+                    $ pip install --user tmuxp
 install dev     .. code-block:: bash
 
                     $ git clone https://github.com/tony/tmuxp.git tmuxp

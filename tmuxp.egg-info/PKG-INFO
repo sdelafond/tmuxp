@@ -1,12 +1,13 @@
 Metadata-Version: 1.1
 Name: tmuxp
-Version: 1.3.1
+Version: 1.3.3
 Summary: tmux session manager
 Home-page: http://github.com/tony/tmuxp/
 Author: Tony Narlock
 Author-email: tony@git-pull.com
 License: BSD
 Download-URL: https://pypi.python.org/pypi/tmuxp
+Description-Content-Type: UNKNOWN
 Description: tmuxp, tmux session manager. built on `libtmux`_.
         
         |pypi| |docs| |build-status| |coverage| |license|
@@ -68,7 +69,7 @@ Description: tmuxp, tmux session manager. built on `libtmux`_.
         
             $ tmuxp load mysession ./another/project/ 
         
-        `simple`_, `very elaborate`_ config examples
+        `simple`_ and `very elaborate`_ config examples
         
         Store configs in (*~/.tmuxp*) or include in your project as
         *~/.tmuxp.{yaml,json}*. See `author's tmuxp configs`_ and the

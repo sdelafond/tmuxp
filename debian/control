@@ -6,7 +6,7 @@ Build-Depends: dh-python, python-setuptools (>= 0.6b3), python3-setuptools, pyth
     python-kaptan, python3-kaptan,
     python-libtmux, python3-libtmux (>= 0.7.3),
     python-click, python3-click
-Standards-Version: 3.9.8
+Standards-Version: 4.0.0
 Homepage: http://github.com/tony/tmuxp/
 Vcs-Git: https://anonscm.debian.org/git/collab-maint/tmuxp.git
 Vcs-Browser: https://anonscm.debian.org/git/collab-maint/tmuxp.git

@@ -16,6 +16,7 @@ doc/history.rst
 doc/index.rst
 doc/quickstart.rst
 requirements/base.txt
+requirements/dev.txt
 requirements/doc.txt
 requirements/test.txt
 tmuxp/__about__.py

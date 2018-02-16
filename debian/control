@@ -8,8 +8,8 @@ Build-Depends: dh-python, python-setuptools (>= 0.6b3), python3-setuptools, pyth
     python-click, python3-click
 Standards-Version: 4.0.0
 Homepage: http://github.com/tony/tmuxp/
-Vcs-Git: https://anonscm.debian.org/git/collab-maint/tmuxp.git
-Vcs-Browser: https://anonscm.debian.org/git/collab-maint/tmuxp.git
+Vcs-Git: https://salsa.debian.org/debian/tmuxp
+Vcs-Browser: https://salsa.debian.org/debian/tmuxp
 
 Package: tmuxp
 Architecture: all

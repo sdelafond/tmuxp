@@ -5,6 +5,8 @@ tmuxp (1.4.0-1) unstable; urgency=medium
   * Use https for homepage URL
   * Use https for copyright-format URL
   * Use http for watch URL
+  * Bump-up Standards-Version
+  * Change section from python to utils
 
  -- Sebastien Delafond <seb@debian.org>  Fri, 30 Mar 2018 13:31:15 +0200
 

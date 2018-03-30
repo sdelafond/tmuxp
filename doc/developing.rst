@@ -26,7 +26,7 @@ To begin developing, check out the code from github:
 
 .. code-block:: bash
 
-    $ git clone git@github.com:tony/tmuxp.git
+    $ git clone git@github.com:tmux-python/tmuxp.git
     $ cd tmuxp
 
 Now create a virtualenv, if you don't know how to, you can create a
@@ -187,12 +187,20 @@ tmuxp is tested against tmux 1.8 and the latest git source. Interpretters
 tested are 2.6, 2.7 and 3.3. The `travis build site`_ uses this
 `.travis.yml`_ configuration:
 
+Testing options
+---------------
+
+``RETRY_TIMEOUT_SECONDS`` can be toggled if certain workspace builder
+tests are being stubborn.
+
+e.g. ``RETRY_TIMEOUT_SECONDS=10 py.test ``
+
 .. literalinclude:: ../.travis.yml
     :language: yaml
 
 .. _py.test usage argument: https://pytest.org/latest/usage.html
 .. _entr: http://entrproject.org/
 .. _travis-ci: http://www.travis-ci.org
-.. _travis build site: http://www.travis-ci.org/tony/tmuxp
-.. _.travis.yml: https://github.com/tony/tmuxp/blob/master/.travis.yml
-.. _issue on github: https://github.com/tony/tmuxp/issues
+.. _travis build site: http://www.travis-ci.org/tmux-python/tmuxp
+.. _.travis.yml: https://github.com/tmux-python/tmuxp/blob/master/.travis.yml
+.. _issue on github: https://github.com/tmux-python/tmuxp/issues

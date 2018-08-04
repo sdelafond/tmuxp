@@ -13,7 +13,7 @@ Vcs-Browser: https://salsa.debian.org/debian/tmuxp
 
 Package: tmuxp
 Architecture: all
-Depends: ${misc:Depends}, ${python3:Depends}, python3-tmuxp
+Depends: ${misc:Depends}, ${python3:Depends}, python3-tmuxp, python3-pkg-resources
 Description: tmux session manager
  tmux session manager allowing both JSON and YAML configuration
  formats. Available features:
@@ -43,7 +43,7 @@ Description: tmux session manager (Python 2)
 
 Package: python3-tmuxp
 Architecture: all
-Depends: ${misc:Depends}, ${python3:Depends}
+Depends: ${misc:Depends}, ${python3:Depends},
 Description: tmux session manager (Python 3)
  tmux session manager allowing both JSON and YAML configuration
  formats. Available features:

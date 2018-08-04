@@ -1,3 +1,9 @@
+tmuxp (1.4.0-2) unstable; urgency=medium
+
+  * Depend on python3-pkg-resources (Closes: #904769)
+
+ -- Sebastien Delafond <seb@debian.org>  Sat, 04 Aug 2018 08:05:09 +0200
+
 tmuxp (1.4.0-1) unstable; urgency=medium
 
   * New upstream version 1.4.0

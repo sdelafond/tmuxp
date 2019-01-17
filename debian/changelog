@@ -1,3 +1,9 @@
+tmuxp (1.5.0a-1) unstable; urgency=medium
+
+  * New upstream release (Closes: #919167)
+
+ -- Sebastien Delafond <seb@debian.org>  Wed, 16 Jan 2019 18:00:23 +0100
+
 tmuxp (1.4.0-2) unstable; urgency=medium
 
   * Depend on python3-pkg-resources (Closes: #904769)

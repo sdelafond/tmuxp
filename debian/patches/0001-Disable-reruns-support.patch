@@ -1,0 +1,23 @@
+From: =?utf-8?q?S=C3=A9bastien_Delafond?= <sdelafond@gmail.com>
+Date: Thu, 17 Jan 2019 14:53:57 +0100
+Subject: Disable reruns support
+
+---
+ setup.cfg | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/setup.cfg b/setup.cfg
+index 61d2927..f65015b 100644
+--- a/setup.cfg
++++ b/setup.cfg
+@@ -40,8 +40,8 @@ ignore = E111,
+          W391,
+          W503
+ 
+-[tool:pytest]
+-addopts = --reruns=5
++# [tool:pytest]
++# addopts = --reruns=5
+ 
+ [isort]
+ combine_as_imports= true

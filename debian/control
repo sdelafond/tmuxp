@@ -2,14 +2,14 @@ Source: tmuxp
 Maintainer: Sebastien Delafond <seb@debian.org>
 Section: utils
 Priority: optional
-Build-Depends: dh-python, python-setuptools (>= 0.6b3), python3-setuptools, python-all (>= 2.6.6-3), python3-all, debhelper (>= 9),
-    python-kaptan, python3-kaptan,
-    python-libtmux (>= 0.8.0), python3-libtmux (>= 0.8.0),
-    python-click, python3-click,
-    python-flake8, python3-flake8,
-    python-hypothesis, python3-hypothesis,
-    python-isort, python3-isort,
-    python-pytest, python3-pytest,
+Build-Depends: dh-python, python3-setuptools, python3-all, debhelper (>= 9),
+    python3-kaptan,
+    python3-libtmux (>= 0.8.0),
+    python3-click,
+    python3-flake8,
+    python3-hypothesis,
+    python3-isort,
+    python3-pytest,
     tmux,
     vulture
 Standards-Version: 4.4.1
@@ -32,20 +32,6 @@ Description: tmux session manager
     configuration
  .
  This is a dependency package
-
-Package: python-tmuxp
-Architecture: all
-Depends: ${misc:Depends}, ${python:Depends}
-Description: tmux session manager (Python 2)
- tmux session manager allowing both JSON and YAML configuration
- formats. Available features:
-  - allows both simple and very elaborate configs
-  - can store and load multiple sessions
-  - can custom startup scripts (such as installing project dependencies
-    before loading tmux)
-  - session freezing: snapshot your current tmux layout, pane paths,
-    and window/session names, and dump the result as a tmuxp
-    configuration
 
 Package: python3-tmuxp
 Architecture: all

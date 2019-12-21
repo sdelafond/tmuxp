@@ -213,17 +213,17 @@ def test_global_options(session):
     builder = WorkspaceBuilder(sconf=sconfig)
     builder.build(session=session)
 
-    assert "top" in s.show_option('status-position', g=True)
-    assert 493 == s.show_option('repeat-time', g=True)
+    assert "top" in s.show_option('status-position', _global=True)
+    assert 493 == s.show_option('repeat-time', _global=True)
 
 
 def test_global_session_env_options(session, monkeypatch):
     visual_silence = 'on'
-    monkeypatch.setenv('VISUAL_SILENCE', visual_silence)
+    monkeypatch.setenv(str('VISUAL_SILENCE'), str(visual_silence))
     repeat_time = 738
-    monkeypatch.setenv('REPEAT_TIME', repeat_time)
+    monkeypatch.setenv(str('REPEAT_TIME'), str(repeat_time))
     main_pane_height = 8
-    monkeypatch.setenv('MAIN_PANE_HEIGHT', main_pane_height)
+    monkeypatch.setenv(str('MAIN_PANE_HEIGHT'), str(main_pane_height))
 
     yaml_config = loadfixture("workspacebuilder/env_var_options.yaml")
     s = session
@@ -234,7 +234,7 @@ def test_global_session_env_options(session, monkeypatch):
     builder = WorkspaceBuilder(sconf=sconfig)
     builder.build(session=session)
 
-    assert visual_silence in s.show_option('visual-silence', g=True)
+    assert visual_silence in s.show_option('visual-silence', _global=True)
     assert repeat_time == s.show_option('repeat-time')
     assert main_pane_height == s.attached_window.show_window_option('main-pane-height')
 

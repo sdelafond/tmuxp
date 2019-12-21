@@ -1,3 +1,12 @@
+tmuxp (1.5.4-1) unstable; urgency=medium
+
+  * Bump up Standards-Version
+  * Remove python2 package
+  * Remove obsolete HYPOTHESIS_DATABASE_FILE environment variable
+  * New upstream version 1.5.4
+
+ -- Sebastien Delafond <seb@debian.org>  Sat, 21 Dec 2019 10:16:50 +0100
+
 tmuxp (1.5.0a-1) unstable; urgency=medium
 
   * New upstream release (Closes: #919167)

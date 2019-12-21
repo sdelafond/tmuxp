@@ -4,7 +4,6 @@ d = $(CURDIR)/debian/tmuxp/usr/bin
 export PYBUILD_NAME=tmuxp
 export PYBUILD_AFTER_INSTALL_python2 = rm -rv {destdir}/usr/bin
 export PYBUILD_AFTER_INSTALL_python3 = mkdir -pv $d && mv -v {destdir}/usr/bin/tmuxp $d
-export HYPOTHESIS_DATABASE_FILE=$(CURDIR)/debian/hypothesis
 export PYBUILD_AFTER_TEST=rm -r {build_dir}/.hypothesis
 export PYBUILD_DISABLE=test
 

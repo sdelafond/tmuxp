@@ -236,6 +236,24 @@ def test_trickle_relative_start_directory():
     assert test_config == fixtures.trickle.expected
 
 
+def test_trickle_window_with_no_pane_config():
+    test_yaml = """
+    session_name: test_session
+    windows:
+    - window_name: test_1
+      panes:
+      - shell_command:
+        - ls -l
+    - window_name: test_no_panes
+    """
+    sconfig = load_yaml(test_yaml)
+    config.validate_schema(sconfig)
+
+    assert config.expand(config.trickle(sconfig))['windows'][1]['panes'][0] == {
+        'shell_command': []
+    }
+
+
 def test_expands_blank_panes():
     """Expand blank config into full form.
 
@@ -356,7 +374,7 @@ def test_replaces_env_variables(monkeypatch):
 
     sconfig = load_yaml(yaml_config)
 
-    monkeypatch.setenv(env_key, env_val)
+    monkeypatch.setenv(str(env_key), str(env_val))
     sconfig = config.expand(sconfig)
     assert "%s/test" % env_val == sconfig['start_directory']
     assert "%s/test2" % env_val in sconfig['shell_command_before']

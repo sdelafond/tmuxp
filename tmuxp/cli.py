@@ -35,17 +35,32 @@ def get_config_dir():
     """
     Return tmuxp configuration directory.
 
-    Checks for ``TMUXP_CONFIGDIR`` environmental variable.
+    ``TMUXP_CONFIGDIR`` environmental variable has precedence if set. We also 
+    evaluate XDG default directory from XDG_CONFIG_HOME environmental variable 
+    if set or its default. Then the old default ~/.tmuxp is returned for 
+    compatibility.
 
     Returns
     -------
     str :
         absolute path to tmuxp config directory
     """
-    if 'TMUXP_CONFIGDIR' in os.environ:
-        return os.path.expanduser(os.environ['TMUXP_CONFIGDIR'])
 
-    return os.path.expanduser('~/.tmuxp/')
+    paths = []
+    if 'TMUXP_CONFIGDIR' in os.environ:
+        paths.append(os.environ['TMUXP_CONFIGDIR'])
+    if 'XDG_CONFIG_HOME' in os.environ:
+        paths.append(os.path.join(os.environ['XDG_CONFIG_HOME'], 'tmuxp'))
+    else:
+        paths.append('~/.config/tmuxp/')
+    paths.append('~/.tmuxp')
+
+    for path in paths:
+        path = os.path.expanduser(path)
+        if os.path.isdir(path):
+            return path
+    # Return last path as default if none of the previous ones matched
+    return path
 
 
 def get_tmuxinator_dir():
@@ -147,6 +162,7 @@ def set_layout_hook(session, hook_name):
     """
     cmd = ['set-hook', '-t', session.id, hook_name]
     hook_cmd = []
+    attached_window = session.attached_window
     for window in session.windows:
         # unfortunately, select-layout won't work unless
         # we've literally selected the window at least once
@@ -162,6 +178,7 @@ def set_layout_hook(session, hook_name):
             target_session=session.id, hook_name=hook_name
         )
     )
+    hook_cmd.append('selectw -t {}'.format(attached_window.id))
 
     # join the hook's commands with semicolons
     hook_cmd = '{}'.format('; '.join(hook_cmd))
@@ -637,7 +654,7 @@ def startup(config_dir):
 
 
 @cli.command(name='freeze')
-@click.argument('session_name', nargs=1)
+@click.argument('session_name', nargs=1, required=False)
 @click.option('-S', 'socket_path', help='pass-through for tmux -S')
 @click.option('-L', 'socket_name', help='pass-through for tmux -L')
 def command_freeze(session_name, socket_name, socket_path):
@@ -649,7 +666,10 @@ def command_freeze(session_name, socket_name, socket_path):
     t = Server(socket_name=socket_name, socket_path=socket_path)
 
     try:
-        session = t.find_where({'session_name': session_name})
+        if session_name:
+            session = t.find_where({'session_name': session_name})
+        else:
+            session = t.list_sessions()[0]
 
         if not session:
             raise exc.TmuxpException('Session not found.')
@@ -692,10 +712,7 @@ def command_freeze(session_name, socket_name, socket_path):
                 )
             )
             dest_prompt = click.prompt(
-                'Save to: %s' % save_to,
-                value_proc=get_abs_path,
-                default=save_to,
-                confirmation_prompt=True,
+                'Save to: %s' % save_to, value_proc=get_abs_path, default=save_to
             )
             if os.path.exists(dest_prompt):
                 print('%s exists. Pick a new filename.' % dest_prompt)
